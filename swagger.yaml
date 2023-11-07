@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Ddoc-doc
+  description: 팀 Ddoc-doc의 API문서입니다.
+  license:
+    name: MIT
+servers:
+  - url: 'http://localhost:3000/'
+paths:
+  /users:
+    get:
+      summary: 유저 테스트
+      parameters:
+        - name: name
+          in: query
+          description: 유저 이름
+          required: true
+          default: 1
+          schema:
+          type: string
+          format: string
+      responses:
+        '400':
+          $ref: '#/components/responses/BadRequest'
+components:
+  parameters: null
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - name
+        - email
+      properties:
+        id:
+          type: number
+          description: id
+        name:
+          type: string
+          description: 유저 이름
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+  responses:
+    BadRequest:
+      description: 잘못된 요청
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            message: 잘못된 요청
+    InternalServerError:
+      description: 서버 에러
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            message: 서버 내부 오류
