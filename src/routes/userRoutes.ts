@@ -8,6 +8,7 @@ userRoutes.use('*', (req:Request, res:Response, next:NextFunction) => {
   console.log("userRoutes")
   next();
 })
+
 userRoutes.get('/', userController.getAllUsers);
 
 export default userRoutes;

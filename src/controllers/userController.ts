@@ -6,7 +6,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
   try {
     // 사용자 서비스를 호출하여 사용자 목록을 가져옵니다.
     console.log("1");
-    const users = await userService.getTest();
+    const users = await userService.getAllUsers();
 
     // 사용자 목록을 클라이언트에 응답
     console.log(users)
