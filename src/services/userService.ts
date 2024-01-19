@@ -1,4 +1,4 @@
-import { User } from '../models/user';
+// import { User } from '../models/user';
 // 가상의 사용자 데이터
   
   // 모든 사용자 목록을 가져오는 메서드

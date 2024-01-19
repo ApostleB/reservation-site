@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
-import * as userController from '../controllers/userController'; // 사용자 컨트롤러를 가져옵니다.
+// import * as userController from '../controllers/userController'; // 사용자 컨트롤러를 가져옵니다.
 
 const userRoutes = express.Router();
 
@@ -9,6 +9,8 @@ userRoutes.use('*', (req:Request, res:Response, next:NextFunction) => {
   next();
 })
 
-userRoutes.get('/', userController.getAllUsers);
+// userRoutes.get('/', userController.getAllUsers);
+
+
 
 export default userRoutes;
